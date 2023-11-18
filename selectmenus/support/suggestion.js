@@ -1,3 +1,9 @@
+/*
+This is a an interaction handler for a support command. After the first execute async function is called by the supports.js script it creates a Modal and lets the user specify their suggestion.
+After sumbitting their suggestion, they get a reply saying their suggestion was successfully recorded. Afterwards the suggestion and it's reasoning are made into an embed and this embed is send to the suggestions channel
+in the discord guild (server).
+*/
+
 const {
     TextInputStyle,
     ModalBuilder,
