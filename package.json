@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "axios": "^1.5.1",
+    "concurrently": "^8.2.1",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.0.0",
+    "nodemon": "^3.0.1"
+  },
+  "name": "intelbot",
+  "version": "1.0.0",
+  "description": "Bot that screens for alt account",
+  "main": "bot.js",
+  "scripts": {
+    "start": "concurrently \"node bot.js\""
+  },
+  "author": "janpieterkes",
+  "license": "ISC"
+}
