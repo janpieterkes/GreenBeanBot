@@ -1,3 +1,10 @@
+/*
+This is the main script of a discord bot written with discord.js.
+All basic startup proccess are handled here (discord bot loging and mongoDB connection).
+Everytime the bot.js script restarts is redeploys all slashcommands to keep them update with any changes. All commands are saved to a collection that I parented to the discord client variable.
+This has been done to make command handling easier, all command files have an execute() async function that handles all inputs. I considerded this to be cleaner then a massive row of else if statements.
+*/
+
 require('dotenv').config()
 
 const Discord = require('discord.js')
