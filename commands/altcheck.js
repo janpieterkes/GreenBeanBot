@@ -1,3 +1,11 @@
+/*
+This is a pretty basic alt check system for ROBLOX RP groups. You use an ChatInputInteraction command (discord.js) and specify the username of the person you wish to check.
+It loads some json data using the ROBLOX API. How many friends someone has, how many badges, followers, etc.
+It also gets an array of all the groups the user is a part of, these groups are all checked to make sure none of them are banned. An array of banned groups is saved and loaded using mongoDD (mongoose).
+The banned groups can be modified using the blacklistgroup and whitelistgroup commands.
+After all the above mentioned data is proccessed it's made into an embed and send as a reply to the interaction.
+*/
+
 const { SlashCommandBuilder,EmbedBuilder,ButtonBuilder,ButtonStyle,ActionRowBuilder} = require('discord.js')
 const axios = require('axios').default
 const path = require('path')
