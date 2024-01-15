@@ -101,14 +101,9 @@ module.exports = { // The command itself and it's functionality are exported. Th
 
         // Load the member object of the suggestion author.
 
-        try {
-            member.send({ // Send the suggestion author a DM explaining their suggestion was approved.
+        member.send({ // Send the suggestion author a DM explaining their suggestion was approved.
                 content : `Your suggestion has been approved. We're working on implementing it.`
-            })
-            interaction.reply({
-                content : `Approved suggestion.`,
-                ephemeral : true
-            })
-        } catch (err) {console.log(err)} // Catch any errors. (Important if their DMs are closed).
+        }).then(msg => interaction.reply({content : `Approved suggestion.`, ephemeral : true}))
+        .catch(response => interaction.reply({content : response.rawError.message, ephemeral : true})) // If the suggestion author's DMs are closed, notify the interaction author of the reason (most likely: "Cannot send messages to this user").
     }
 }
